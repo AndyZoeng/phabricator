@@ -1,0 +1,11 @@
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+frontend/frontend
+*.test
+.etcd
+.node*
+.logs
+*npm-debug.log

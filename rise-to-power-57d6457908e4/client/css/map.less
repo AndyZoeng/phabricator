@@ -1,0 +1,145 @@
+// Copyright 2013 Google Inc.
+// 
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     http://www.apache.org/licenses/LICENSE-2.0
+// 
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+.fullscreen {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+@detailHeight: 150px;
+@orderWidth: 300px;
+@statusBarHeight: 24px;
+.map {
+	position: absolute;
+	left: 0;
+	right: @orderWidth;
+	top: @statusBarHeight;
+	bottom: @detailHeight;
+}
+
+.status-bar {
+  position: absolute;
+  left: 0;
+  right: @orderWidth;
+  top: 0;
+  height: @statusBarHeight;
+  background-color: black;
+  color: white;
+  font-size: 11pt;
+  padding: 1px;
+}
+
+.detail-view {
+  @iconWidth: 96px;
+  @iconBorderWidth: 3px;
+  @iconSpacing: 4px;
+  
+	position: absolute;
+	height: @detailHeight;
+	bottom: 0;
+	left: 0;
+	right: @orderWidth;
+  
+  padding: 4px;
+  background-color: black;
+  
+  .icon {
+    display: block;
+    width: @iconWidth;
+    border: @iconBorderWidth solid #333;
+    background-color: #222;
+  }
+  
+  .info {
+    position: absolute;
+    left: @iconWidth + 2 * @iconBorderWidth + 2 * @iconSpacing;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    
+    a {
+      color: #DDD;
+      text-decoration: none;
+    }
+  }
+  
+  h3 {
+    color: white;
+    margin: 0;
+  }
+}
+
+.order-list {
+  @height: 50px;
+  @iconWidth: 30px;
+  @iconBorderWidth: 2px;
+  @iconSpacing: 4px;
+  
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: @orderWidth;
+	right: 0;
+  background-color: black;
+  color: white;
+  overflow-y: scroll;  
+  
+  margin: 0;
+  padding: 0;
+  
+  li {
+    border: 1px solid #333;
+    height: @height;
+    
+    .details {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: @iconWidth + 2 * @iconBorderWidth + 2 * @iconSpacing;
+      
+      padding: 3px;
+      
+      h3 {
+        margin: 0;
+        padding: 0;
+      }
+      
+      a {
+        color: white;
+      }
+    }
+    .icon {
+      display: block;
+      position: absolute:
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: @iconWidth + 2 * @iconBorderWidth + 2 * @iconSpacing;
+    
+      img {
+        position: absolute;
+        left: @iconSpacing;
+        right: @iconSpacing;
+        top: @height/2 - @iconWidth / 2;
+        width: @iconWidth;
+        border: @iconBorderWidth solid #333;
+        background-color: #222;
+      }
+    }
+  }
+}
